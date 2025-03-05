@@ -1,0 +1,56 @@
+:root {
+  --Lime: hsl(61, 70%, 52%);
+  --Red: hsl(4, 69%, 50%);
+  --White: hsl(0, 0%, 100%);
+  --Slate-100: hsl(202, 86%, 94%);
+  --Slate-300: hsl(203, 41%, 72%);
+  --Slate-500: hsl(200, 26%, 54%);
+  --Slate-700: hsl(200, 24%, 40%);
+  --Slate-900: hsl(202, 55%, 16%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main {
+  padding: 1.5em;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Header */
+
+header > button {
+  all: unset;
+  color: var(--Slate-500);
+  border-bottom: 2px solid gray;
+  cursor: pointer;
+}
+
+/* /Header */
+
+/* Form  */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 1.3em 0;
+  color: var(--Slate-700);
+}
+
+form > input {
+  border: 1px solid var(--Slate-700);
+  padding: 0.7em 0.5em;
+  border-radius: 5px;
+}
+
+/* /Form */
+
+/* Hide arrow from input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  /* margin: 0; */
+}
