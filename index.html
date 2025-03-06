@@ -44,25 +44,41 @@
       </header>
       <form action="get">
         <label for="mortgage-amount">Mortgage Amount</label>
-
-        <input
-          type="number"
-          name="mortgage-amount"
-          id="mortgage-amount"
-          required
-        />
+        <div class="container-input">
+          <span class="dollar-sign">$</span>
+          <input
+            type="number"
+            name="mortgage-amount"
+            id="mortgage-amount"
+            class="input mortgage-amount"
+            required
+          />
+        </div>
 
         <label for="mortgage-term">Mortgage Term</label>
-        <input
-          type="number"
-          name="mortgage-term"
-          id="mortgage-term"
-          inputmode="numeric"
-          required
-        />
+        <div class="container-input">
+          <input
+            type="number"
+            name="mortgage-term"
+            id="mortgage-term"
+            inputmode="numeric"
+            class="input mortgage-term"
+            required
+          />
+          <span class="years">years</span>
+        </div>
 
         <label for="interest-rate">Interest Rate</label>
-        <input type="number" name="interest-rate" id="interest-rate" required />
+        <div class="container-input">
+          <input
+            type="number"
+            name="interest-rate"
+            id="interest-rate"
+            class="input interest-rate"
+            required
+          />
+          <span class="percent-sign">%</span>
+        </div>
       </form>
 
       <form method="post">
