@@ -15,6 +15,15 @@
     <title>Frontend Mentor | Mortgage repayment calculator</title>
 
     <link rel="stylesheet" href="style.css" />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- /Icons -->
     <!-- Fonts -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -81,27 +90,42 @@
         </div>
       </form>
 
-      <form method="post">
+      <form method="post" class="form-mortgage-type">
         <legend>Mortgage Type</legend>
-        <label
-          ><input type="radio" name="radio" value="repayment" />Repayment</label
+        <label class="input text-bold"
+          ><input
+            type="radio"
+            name="radio"
+            value="repayment"
+            class="input-type"
+          />Repayment</label
         >
-        <label
-          ><input type="radio" name="radio" value="interest-only" />Interest
-          Only</label
+        <label class="input text-bold"
+          ><input
+            type="radio"
+            name="radio"
+            value="interest-only"
+            class="input-type"
+          />Interest Only</label
         >
 
-        <input type="submit" value="Calculate Repayments" />
+        <button type="submit" class="btn-submit">
+          <i class="fa-solid fa-calculator"></i>Calculate Repayments
+        </button>
       </form>
-
-      <section>
-        <h2>Results shown here</h2>
-        <p>
-          Complete the form and click “calculate repayments” to see what your
-          monthly repayments would be.
-        </p>
-      </section>
     </main>
+
+    <section class="section-result">
+      <img
+        src="/assets/images/illustration-empty.svg"
+        alt="calculator and some dimes"
+      />
+      <h2>Results shown here</h2>
+      <p>
+        Complete the form and click “calculate repayments” to see what your
+        monthly repayments would be.
+      </p>
+    </section>
 
     <!-- Completed results start -->
 
@@ -111,10 +135,10 @@
 
     <!-- Completed results end -->
 
-    <div class="attribution">
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </div> -->
   </body>
 </html>

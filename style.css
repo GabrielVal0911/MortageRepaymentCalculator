@@ -15,6 +15,14 @@
   box-sizing: border-box;
 }
 
+/* I use that to fix 100vh of result-section */
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
   padding: 1.5em;
   font-family: "Plus Jakarta Sans", sans-serif;
@@ -27,6 +35,10 @@ header > button {
   color: var(--Slate-500);
   border-bottom: 2px solid gray;
   cursor: pointer;
+}
+
+header h1 {
+  color: var(--Slate-900);
 }
 
 /* /Header */
@@ -44,6 +56,7 @@ form {
   display: flex;
   flex-direction: column;
   position: relative;
+  margin: 0.45em 0;
 }
 
 .input {
@@ -102,3 +115,70 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   /* margin: 0; */
 }
+
+/* Form mortgage type */
+
+.form-mortgage-type legend,
+.form-mortgage-type label {
+  margin-bottom: 0.35em;
+}
+
+.input-type {
+  margin-right: 0.85em;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  transform: scale(1.3);
+  margin-left: 0.5em;
+}
+
+.text-bold {
+  font-weight: bold;
+  color: var(--Slate-900);
+}
+
+.btn-submit {
+  all: unset;
+  background-color: var(--Lime);
+  text-align: center;
+  font-weight: bold;
+  color: var(--Slate-900);
+  padding: 0.75em 1em;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.btn-submit i {
+  margin-right: 12px;
+  font-size: 18px;
+}
+/* /Form mortgage */
+
+/* Result section */
+.section-result {
+  padding: 0 2em;
+  background-color: var(--Slate-900);
+  width: 100%;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.section-result h2 {
+  color: var(--White);
+}
+.section-result p {
+  color: var(--Slate-300);
+}
+
+.section-result img {
+  padding-top: 1.5em;
+}
+
+/* /Result section */
