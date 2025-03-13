@@ -49,7 +49,7 @@
     <main>
       <header>
         <h1>Mortgage Calculator</h1>
-        <button>Clear All</button>
+        <button class="btn-clear">Clear All</button>
       </header>
       <form action="get">
         <label for="mortgage-amount">Mortgage Amount</label>
@@ -64,35 +64,41 @@
           />
         </div>
 
-        <label for="mortgage-term">Mortgage Term</label>
-        <div class="container-input">
-          <input
-            type="number"
-            name="mortgage-term"
-            id="mortgage-term"
-            inputmode="numeric"
-            class="input mortgage-term"
-            required
-          />
-          <span class="years">years</span>
-        </div>
+        <div class="wrapper-term-rate">
+          <div>
+            <label for="mortgage-term">Mortgage Term</label>
+            <div class="container-input">
+              <input
+                type="number"
+                name="mortgage-term"
+                id="mortgage-term"
+                inputmode="numeric"
+                class="input mortgage-term"
+                required
+              />
+              <span class="years">years</span>
+            </div>
+          </div>
 
-        <label for="interest-rate">Interest Rate</label>
-        <div class="container-input">
-          <input
-            type="number"
-            name="interest-rate"
-            id="interest-rate"
-            class="input interest-rate"
-            required
-          />
-          <span class="percent-sign">%</span>
+          <div>
+            <label for="interest-rate">Interest Rate</label>
+            <div class="container-input">
+              <input
+                type="number"
+                name="interest-rate"
+                id="interest-rate"
+                class="input interest-rate"
+                required
+              />
+              <span class="percent-sign">%</span>
+            </div>
+          </div>
         </div>
       </form>
 
       <form method="post" class="form-mortgage-type">
         <legend>Mortgage Type</legend>
-        <label class="input text-bold"
+        <label class="input text-bold input-repayment"
           ><input
             type="radio"
             name="radio"
@@ -100,7 +106,7 @@
             class="input-type"
           />Repayment</label
         >
-        <label class="input text-bold"
+        <label class="input text-bold input-interest"
           ><input
             type="radio"
             name="radio"
