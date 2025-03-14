@@ -58,6 +58,12 @@ form {
   flex-direction: column;
   position: relative;
   margin: 0.45em 0;
+  transition: background-color 0.3s ease;
+}
+
+.container-input:focus-within .dollar-sign {
+  background-color: var(--Lime);
+  border-color: var(--Lime);
 }
 
 .input {
@@ -116,6 +122,7 @@ span {
 
 .dollar-sign {
   border-radius: 5px 0 0 5px;
+  transition: background-color 0.3s ease;
 }
 
 /* /Form */
@@ -139,9 +146,21 @@ input::-webkit-inner-spin-button {
   font-weight: bold;
 }
 
+.input-repayment,
+.input-interest {
+  transition: background-color 0.5s ease;
+}
+
 .input-repayment:hover,
 .input-interest:hover {
   border-color: #f1dd1f;
+}
+
+/* Modify circle of radio button */
+.input-repayment:has(input:checked),
+.input-interest:has(input:checked) {
+  background-color: #f4ed00;
+  border-color: var(--Lime);
 }
 
 input[type="radio"] {
@@ -164,6 +183,7 @@ input[type="radio"] {
   border-radius: 25px;
   cursor: pointer;
   margin-top: 0.8em;
+  transition: background-color 0.4s ease;
 }
 
 .btn-submit:hover {
