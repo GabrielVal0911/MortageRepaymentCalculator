@@ -49,7 +49,7 @@
     <main>
       <header>
         <h1>Mortgage Calculator</h1>
-        <button class="btn-clear">Clear All</button>
+        <button class="btn-clear" id="btn-clear-all">Clear All</button>
       </header>
       <form action="get">
         <label for="mortgage-amount">Mortgage Amount</label>
@@ -96,13 +96,14 @@
         </div>
       </form>
 
-      <form method="post" class="form-mortgage-type">
+      <form method="post" class="form-mortgage-type" id="form">
         <legend>Mortgage Type</legend>
         <label class="input text-bold input-repayment"
           ><input
             type="radio"
             name="radio"
             value="repayment"
+            id="input-repayment"
             class="input-type"
           />Repayment</label
         >
@@ -111,11 +112,12 @@
             type="radio"
             name="radio"
             value="interest-only"
+            id="input-interest-only"
             class="input-type"
           />Interest Only</label
         >
 
-        <button type="submit" class="btn-submit">
+        <button type="submit" class="btn-submit" id="btn-submit">
           <i class="fa-solid fa-calculator"></i>Calculate Repayments
         </button>
       </form>
@@ -146,5 +148,6 @@
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
     </div> -->
+    <script src="script.js"></script>
   </body>
 </html>
