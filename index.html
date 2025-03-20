@@ -62,11 +62,12 @@
             class="input mortgage-amount"
             required
           />
+          <small></small>
         </div>
 
         <div class="wrapper-term-rate">
           <div>
-            <label for="mortgage-term">Mortgage Term</label>
+            <label for="mortgage-term" class="input-label">Mortgage Term</label>
             <div class="container-input">
               <input
                 type="number"
@@ -77,11 +78,12 @@
                 required
               />
               <span class="years">years</span>
+              <small></small>
             </div>
           </div>
 
           <div>
-            <label for="interest-rate">Interest Rate</label>
+            <label for="interest-rate" class="input-label">Interest Rate</label>
             <div class="container-input">
               <input
                 type="number"
@@ -91,6 +93,7 @@
                 required
               />
               <span class="percent-sign">%</span>
+              <small></small>
             </div>
           </div>
         </div>
@@ -98,25 +101,27 @@
 
       <form method="post" class="form-mortgage-type" id="form">
         <legend>Mortgage Type</legend>
-        <label class="input text-bold input-repayment"
-          ><input
-            type="radio"
-            name="radio"
-            value="repayment"
-            id="input-repayment"
-            class="input-type"
-          />Repayment</label
-        >
-        <label class="input text-bold input-interest"
-          ><input
-            type="radio"
-            name="radio"
-            value="interest-only"
-            id="input-interest-only"
-            class="input-type"
-          />Interest Only</label
-        >
-
+        <div class="container-mortgage-type" id="container-mortgage-type">
+          <label class="input text-bold input-repayment"
+            ><input
+              type="radio"
+              name="radio"
+              value="repayment"
+              id="input-repayment"
+              class="input-type"
+            />Repayment</label
+          >
+          <label class="input text-bold input-interest"
+            ><input
+              type="radio"
+              name="radio"
+              value="interest-only"
+              id="input-interest-only"
+              class="input-type"
+            />Interest Only</label
+          >
+          <small id="mortgage-type"></small>
+        </div>
         <button type="submit" class="btn-submit" id="btn-submit">
           <i class="fa-solid fa-calculator"></i>Calculate Repayments
         </button>

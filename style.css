@@ -42,14 +42,16 @@ header h1 {
   margin-bottom: 0.4em;
 }
 
+legend {
+  margin-top: 1.5em;
+}
 /* /Header */
 
 /* Form  */
 form {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  margin: 1.3em 0;
+  margin-top: 1.5em;
   color: var(--Slate-700);
 }
 
@@ -59,6 +61,17 @@ form {
   position: relative;
   margin: 0.45em 0;
   transition: background-color 0.3s ease;
+}
+
+.container-mortgage-type {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-label {
+  margin-top: 2.5em;
+  display: block;
 }
 
 .container-input:focus-within .dollar-sign {
@@ -182,7 +195,7 @@ input[type="radio"] {
   padding: 0.75em 1em;
   border-radius: 25px;
   cursor: pointer;
-  margin-top: 0.8em;
+  margin-top: 2.6em;
   transition: background-color 0.4s ease;
 }
 
@@ -199,6 +212,22 @@ input[type="radio"] {
 .btn-clear:focus {
   color: var(--Slate-900);
 }
+
+/* Error state */
+
+.error {
+  color: red;
+}
+
+small {
+  position: absolute;
+  top: 48px;
+}
+
+#mortgage-type {
+  top: 118px;
+}
+
 /* /Form mortgage */
 
 /* Result section */
@@ -247,7 +276,7 @@ input[type="radio"] {
     width: 90%;
     flex-direction: row;
     max-width: 1000px;
-    height: 700px;
+    height: 740px;
   }
 
   main {
