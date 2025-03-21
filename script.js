@@ -70,10 +70,17 @@ const isRequired = (value) => (value === "" ? false : true);
 const showError = (input, message) => {
   // get the form-field element
   const formField = input.parentElement;
+
   // add the error class
-  formField.classList.add("error");
+
+  input.classList.add("error");
 
   // show the error message
+  const span = formField.querySelector("span");
+  if (span) {
+    span.classList.add("error-span");
+  }
+
   const error = formField.querySelector("small");
   error.textContent = message;
 };
@@ -83,7 +90,12 @@ const showSuccess = (input) => {
   const formField = input.parentElement;
 
   // remove the error class
-  formField.classList.remove("error");
+  input.classList.remove("error");
+
+  const span = formField.querySelector("span");
+  if (span) {
+    span.classList.remove("error-span");
+  }
 
   const errorElement = formField.querySelector("small");
   const mortgageTypeElement = document.getElementById("mortgage-type");

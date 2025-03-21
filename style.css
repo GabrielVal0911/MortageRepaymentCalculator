@@ -216,12 +216,19 @@ input[type="radio"] {
 /* Error state */
 
 .error {
-  color: red;
+  border-color: red;
+}
+
+.error-span {
+  color: white;
+  background-color: red;
+  border-color: red;
 }
 
 small {
   position: absolute;
   top: 48px;
+  color: red;
 }
 
 #mortgage-type {
