@@ -154,3 +154,16 @@ const checkMortgageType = () => {
   }
   return valid;
 };
+
+// Format value of input(adding comma after 3 numbers)
+
+inputMortgageAmount.oninput = function () {
+  let removeChar = this.value.replace(/[^0-9\.]/g, ""); // This is to remove alphabets and special characters.
+
+  let removeDot = removeChar.replace(/\./g, ""); // This is to remove "DOT"
+  this.value = removeDot;
+
+  let formatedNumber = this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+  this.value = formatedNumber;
+};
