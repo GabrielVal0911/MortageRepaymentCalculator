@@ -239,16 +239,39 @@ small {
 
 /* Result section */
 .section-result {
-  padding: 0 2em 1.5em;
+  padding: 1.5em 2em 1.5em;
   background-color: var(--Slate-900);
-  width: 100%;
-
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   text-align: center;
-  gap: 15px;
+}
+
+.container-result-empty > * {
+  margin-bottom: 0.6em;
+}
+
+.container-result-empty {
+  display: none;
+}
+
+.container-result-completed {
+  border: 2px solid magenta;
+  text-align: left;
+}
+
+.container-result-calculated {
+  margin-top: 2em;
+  background-color: hsl(201, 57%, 12%);
+  border-top: 5px solid var(--Lime);
+  border-radius: 5px;
+}
+
+.monthly-repayments-amount {
+  border-bottom: 1px solid var(--Slate-500);
+}
+
+.result-calculated-title {
+  color: var(--Slate-300);
 }
 
 .section-result h2 {
@@ -295,7 +318,7 @@ small {
     height: 100%;
     flex: 1;
     border-radius: 0 10px 10px 75px;
-    justify-content: center;
+    align-items: center;
   }
 }
 

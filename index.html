@@ -129,15 +129,39 @@
     </main>
 
     <section class="section-result">
-      <img
-        src="/assets/images/illustration-empty.svg"
-        alt="calculator and some dimes"
-      />
-      <h2>Results shown here</h2>
-      <p>
-        Complete the form and click “calculate repayments” to see what your
-        monthly repayments would be.
-      </p>
+      <div class="container-result-empty">
+        <img
+          src="/assets/images/illustration-empty.svg"
+          alt="calculator and some dimes"
+        />
+        <h2>Results shown here</h2>
+        <p>
+          Complete the form and click “calculate repayments” to see what your
+          monthly repayments would be.
+        </p>
+      </div>
+
+      <div class="container-result-completed">
+        <h2>Your results</h2>
+        <p>
+          Your results are shown below based on the information you provided. To
+          adjust the results, edit the form and click "calculate repayments"
+          again
+        </p>
+        <div class="container-result-calculated">
+          <h3 class="result-calculated-title">Your monthly repayments</h3>
+          <p class="monthly-repayments-amount" id="monthly-repayments-amount">
+            1,795eur
+          </p>
+
+          <h3 class="result-calculated-title">
+            Total you'll repay over the term
+          </h3>
+          <p class="total-repayments-amount" id="total-repayments-amount">
+            539,322.94eur
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Completed results start -->
