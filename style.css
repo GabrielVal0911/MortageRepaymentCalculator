@@ -13,6 +13,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /* I use that to fix 100vh of result-section */
@@ -25,7 +26,6 @@ body {
 
 main {
   padding: 0.85em 1.5em;
-  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 /* Header */
@@ -104,11 +104,6 @@ span {
 
 .mortgage-amount {
   padding-inline-start: 45px;
-}
-
-.mortgage-amount:hover,
-.mortgage-amount:focus {
-  border-color: var(--Slate-900);
 }
 
 /* adjust that */
@@ -250,12 +245,7 @@ small {
   margin-bottom: 0.6em;
 }
 
-.container-result-empty {
-  display: none;
-}
-
 .container-result-completed {
-  border: 2px solid magenta;
   text-align: left;
 }
 
@@ -264,25 +254,42 @@ small {
   background-color: hsl(201, 57%, 12%);
   border-top: 5px solid var(--Lime);
   border-radius: 5px;
+  padding: 1em 0.75em;
+}
+
+.monthly-repayments-amount,
+.total-repayments-amount {
+  padding: 0.45em 0;
+  font-weight: 500;
 }
 
 .monthly-repayments-amount {
   border-bottom: 1px solid var(--Slate-500);
+  color: var(--Lime);
+  font-size: 2.35rem;
+  margin-bottom: 0.4em;
 }
 
-.result-calculated-title {
+.total-repayments-amount {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.result-calculated-title,
+.container-result-text {
   color: var(--Slate-300);
+}
+
+.container-result-text {
+  margin: 1em 0;
 }
 
 .section-result h2 {
   color: var(--White);
 }
-.section-result p {
-  color: var(--Slate-300);
-}
 
-.section-result img {
-  padding-top: 1.5em;
+.hidden {
+  display: none;
 }
 
 /* /Result section */

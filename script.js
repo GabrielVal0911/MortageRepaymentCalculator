@@ -8,10 +8,16 @@ const btnSubmit = document.getElementById("btn-submit");
 const containerMortgageType = document.getElementById(
   "container-mortgage-type"
 );
-
-const amount = Number(inputMortgageAmount.value);
-const term = Number(inputMortgageTerm.value) * 12;
-const interestRate = Number(inputInterestRate.value) / 100 / 12;
+const monthlyRepaymentsAmount = document.getElementById(
+  "monthly-repayments-amount"
+);
+const totalRepaymentsAmount = document.getElementById(
+  "total-repayments-amount"
+);
+const containerResultEmpty = document.getElementById("container-result-empty");
+const containerResultCompleted = document.getElementById(
+  "container-result-completed"
+);
 
 btnClearAll.addEventListener("click", clearAll);
 
@@ -21,6 +27,19 @@ function clearAll() {
   inputInterestRate.value = "";
   inputRepayment.checked = false;
   inputInterestOnly.checked = false;
+
+  displayContent(false);
+}
+
+function displayContent(state) {
+  // try to refactor this later
+  if (state) {
+    containerResultEmpty.classList.add("hidden");
+    containerResultCompleted.classList.remove("hidden");
+  } else {
+    containerResultEmpty.classList.remove("hidden");
+    containerResultCompleted.classList.add("hidden");
+  }
 }
 
 function formatNumber(num) {
@@ -32,6 +51,10 @@ function formatNumber(num) {
 
 btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
+
+  const amount = parseInt(inputMortgageAmount.value.replaceAll(",", ""));
+  const term = Number(inputMortgageTerm.value) * 12;
+  const interestRate = Number(inputInterestRate.value) / 100 / 12;
 
   // const amount = Number(inputMortgageAmount.value.replace(/[.,]/g, ""));
 
@@ -55,14 +78,20 @@ btnSubmit.addEventListener("click", function (e) {
   const monthlyPaymentInterestOnly = amount * interestRate;
   const totalPaymentInterestOnly = monthlyPaymentInterestOnly * term + amount;
 
-  // if (inputRepayment.checked) {
-  //   console.log(formatNumber(paymentMonthly));
-  //   console.log(`monthly payment: ${paymentMonthly}`);
-  //   console.log(`total repayment: ${totalRepayment}`);
-  // } else if (inputInterestOnly.checked) {
-  //   console.log(`monthly interest only: ${monthlyPaymentInterestOnly}`);
-  //   console.log(`total interest: ${totalPaymentInterestOnly}`);
-  // }
+  if (isFormValid) {
+    displayContent(true);
+    if (inputRepayment.checked) {
+      monthlyRepaymentsAmount.textContent = formatNumber(paymentMonthly);
+      totalRepaymentsAmount.textContent = formatNumber(totalRepayment);
+    } else if (inputInterestOnly.checked) {
+      monthlyRepaymentsAmount.textContent = formatNumber(
+        monthlyPaymentInterestOnly
+      );
+      totalRepaymentsAmount.textContent = formatNumber(
+        totalPaymentInterestOnly
+      );
+    }
+  }
 });
 
 const isRequired = (value) => (value === "" ? false : true);
