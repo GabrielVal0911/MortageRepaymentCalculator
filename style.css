@@ -7,6 +7,7 @@
   --Slate-500: hsl(200, 26%, 54%);
   --Slate-700: hsl(200, 24%, 40%);
   --Slate-900: hsl(202, 55%, 16%);
+  --Blue: #1a02cf;
 }
 
 * {
@@ -44,6 +45,7 @@ header h1 {
 
 legend {
   margin-top: 1.5em;
+  padding-bottom: 0.6em;
 }
 /* /Header */
 
@@ -59,7 +61,6 @@ form {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 0.45em 0;
   transition: background-color 0.3s ease;
 }
 
@@ -74,9 +75,16 @@ form {
   display: block;
 }
 
-.container-input:focus-within .dollar-sign {
-  background-color: var(--Lime);
-  border-color: var(--Lime);
+.label {
+  margin-bottom: 0.75em;
+}
+
+.container-input:focus-within .dollar-sign,
+.container-input:focus-within .years,
+.container-input:focus-within .percent-sign {
+  background-color: var(--Blue);
+  border-color: var(--Blue);
+  color: white;
 }
 
 .input {
@@ -84,6 +92,7 @@ form {
   padding: 0.9em 0.5em;
   border-radius: 5px;
   width: 100%;
+  cursor: pointer;
 }
 
 .input:focus {
@@ -107,15 +116,24 @@ span {
 }
 
 /* adjust that */
-.mortgage-amount:focus {
-  border-color: var(--Lime);
+.mortgage-amount:focus,
+.mortgage-term:focus,
+.interest-rate:focus {
+  border-color: var(--Blue);
 }
 
 .mortgage-term {
   padding-inline-end: 63px;
 }
+
 .interest-rate {
   padding-inline-end: 45px;
+}
+
+.dollar-sign,
+.years,
+.percent-sign {
+  transition: background-color 0.3s ease;
 }
 
 .years,
@@ -130,7 +148,6 @@ span {
 
 .dollar-sign {
   border-radius: 5px 0 0 5px;
-  transition: background-color 0.3s ease;
 }
 
 /* /Form */
@@ -161,14 +178,14 @@ input::-webkit-inner-spin-button {
 
 .input-repayment:hover,
 .input-interest:hover {
-  border-color: #f1dd1f;
+  border-color: var(--Blue);
 }
 
 /* Modify circle of radio button */
 .input-repayment:has(input:checked),
 .input-interest:has(input:checked) {
-  background-color: #f4ed00;
-  border-color: var(--Lime);
+  background-color: var(--Blue);
+  color: white;
 }
 
 input[type="radio"] {
@@ -282,6 +299,7 @@ small {
 
 .container-result-text {
   margin: 1em 0;
+  line-height: 1.7;
 }
 
 .section-result h2 {
@@ -330,7 +348,8 @@ small {
 }
 
 @media (min-width: 1050px) {
-  main {
+  main,
+  .section-result {
     padding-top: 3.5em;
   }
 
@@ -348,5 +367,9 @@ small {
 
   .btn-submit {
     width: 60%;
+  }
+
+  .result-title {
+    font-size: 2rem;
   }
 }

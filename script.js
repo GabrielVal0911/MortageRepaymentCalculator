@@ -79,7 +79,6 @@ btnSubmit.addEventListener("click", function (e) {
   const totalPaymentInterestOnly = monthlyPaymentInterestOnly * term + amount;
 
   if (isFormValid) {
-    displayContent(true);
     if (inputRepayment.checked) {
       monthlyRepaymentsAmount.textContent = formatNumber(paymentMonthly);
       totalRepaymentsAmount.textContent = formatNumber(totalRepayment);
@@ -91,6 +90,7 @@ btnSubmit.addEventListener("click", function (e) {
         totalPaymentInterestOnly
       );
     }
+    displayContent(true);
   }
 });
 

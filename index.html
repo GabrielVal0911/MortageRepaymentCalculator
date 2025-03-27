@@ -52,7 +52,7 @@
         <button class="btn-clear" id="btn-clear-all">Clear All</button>
       </header>
       <form action="get">
-        <label for="mortgage-amount">Mortgage Amount</label>
+        <label for="mortgage-amount" class="label">Mortgage Amount</label>
         <div class="container-input">
           <span class="dollar-sign">$</span>
           <input
@@ -67,7 +67,9 @@
 
         <div class="wrapper-term-rate">
           <div>
-            <label for="mortgage-term" class="input-label">Mortgage Term</label>
+            <label for="mortgage-term" class="input-label label"
+              >Mortgage Term</label
+            >
             <div class="container-input">
               <input
                 type="number"
@@ -83,7 +85,9 @@
           </div>
 
           <div>
-            <label for="interest-rate" class="input-label">Interest Rate</label>
+            <label for="interest-rate" class="input-label label"
+              >Interest Rate</label
+            >
             <div class="container-input">
               <input
                 type="number"
@@ -134,7 +138,7 @@
           src="/assets/images/illustration-empty.svg"
           alt="calculator and some dimes"
         />
-        <h2>Results shown here</h2>
+        <h2 class="result-title">Results shown here</h2>
         <p class="container-result-text">
           Complete the form and click “calculate repayments” to see what your
           monthly repayments would be.
@@ -145,7 +149,7 @@
         class="container-result-completed hidden"
         id="container-result-completed"
       >
-        <h2>Your results</h2>
+        <h2 class="result-title">Your results</h2>
         <p class="container-result-text">
           Your results are shown below based on the information you provided. To
           adjust the results, edit the form and click "calculate repayments"
