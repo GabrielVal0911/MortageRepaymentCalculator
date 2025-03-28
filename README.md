@@ -3,15 +3,11 @@ LIVE: https://gabrielval0911.github.io/MortageRepaymentCalculator/
 
 # Frontend Mentor - Mortgage repayment calculator
 
-![Design preview for the Mortgage repayment calculator coding challenge](./preview.jpg)
+![App1](https://github.com/user-attachments/assets/9f98af34-befc-4dd8-8d67-31434f3c9d95)
 
-## Welcome! 👋
 
-Thanks for checking out this front-end coding challenge.
+![App2](https://github.com/user-attachments/assets/ae7893f8-6e3d-44ac-80cc-fe7e6a61e524)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
-
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
 
 ## The challenge
 
@@ -27,6 +23,4 @@ Your users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-## Create a custom `README.md`
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
