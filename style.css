@@ -17,10 +17,8 @@
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* I use that to fix 100vh of result-section */
 html,
 body {
-  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -314,6 +312,7 @@ small {
 @media (min-width: 640px) {
   html {
     background-color: var(--Slate-300);
+    min-height: 100%;
   }
   body {
     margin: auto;
@@ -328,7 +327,6 @@ small {
     width: 90%;
     flex-direction: row;
     max-width: 1000px;
-    min-height: 100vh;
   }
 
   main {
