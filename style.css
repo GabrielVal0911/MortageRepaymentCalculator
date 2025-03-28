@@ -59,9 +59,8 @@ form {
 
 .container-input {
   display: flex;
-  flex-direction: column;
   position: relative;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease;
 }
 
 .container-mortgage-type {
@@ -93,6 +92,7 @@ form {
   border-radius: 5px;
   width: 100%;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .input:focus {
@@ -115,7 +115,6 @@ span {
   padding-inline-start: 45px;
 }
 
-/* adjust that */
 .mortgage-amount:focus,
 .mortgage-term:focus,
 .interest-rate:focus {
@@ -133,7 +132,7 @@ span {
 .dollar-sign,
 .years,
 .percent-sign {
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease;
 }
 
 .years,
@@ -156,24 +155,21 @@ span {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  /* margin: 0; */
 }
 
 /* Form mortgage type */
 
-.form-mortgage-type legend,
 .form-mortgage-type label {
-  margin-bottom: 0.35em;
+  margin-bottom: 0.7em;
 }
 
 .input-type {
   margin-right: 0.85em;
-  font-weight: bold;
 }
 
 .input-repayment,
 .input-interest {
-  transition: background-color 0.5s ease;
+  transition: background-color 0.4s ease;
 }
 
 .input-repayment:hover,
@@ -207,7 +203,8 @@ input[type="radio"] {
   padding: 0.75em 1em;
   border-radius: 25px;
   cursor: pointer;
-  margin-top: 2.6em;
+  margin-top: 2.2em;
+  margin-bottom: 0.8em;
   transition: background-color 0.4s ease;
 }
 
@@ -244,7 +241,7 @@ small {
 }
 
 #mortgage-type {
-  top: 118px;
+  top: 120px;
 }
 
 /* /Form mortgage */
@@ -271,7 +268,7 @@ small {
   background-color: hsl(201, 57%, 12%);
   border-top: 5px solid var(--Lime);
   border-radius: 5px;
-  padding: 1em 0.75em;
+  padding: 1em;
 }
 
 .monthly-repayments-amount,
@@ -299,7 +296,7 @@ small {
 
 .container-result-text {
   margin: 1em 0;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .section-result h2 {
@@ -331,7 +328,7 @@ small {
     width: 90%;
     flex-direction: row;
     max-width: 1000px;
-    height: 740px;
+    min-height: 100vh;
   }
 
   main {
@@ -340,10 +337,12 @@ small {
   }
 
   .section-result {
-    height: 100%;
     flex: 1;
     border-radius: 0 10px 10px 75px;
-    align-items: center;
+  }
+
+  .btn-submit {
+    margin-top: 1.45em;
   }
 }
 
@@ -366,7 +365,8 @@ small {
   }
 
   .btn-submit {
-    width: 60%;
+    width: 70%;
+    margin-top: 2em;
   }
 
   .result-title {

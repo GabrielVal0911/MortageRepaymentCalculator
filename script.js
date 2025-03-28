@@ -32,14 +32,8 @@ function clearAll() {
 }
 
 function displayContent(state) {
-  // try to refactor this later
-  if (state) {
-    containerResultEmpty.classList.add("hidden");
-    containerResultCompleted.classList.remove("hidden");
-  } else {
-    containerResultEmpty.classList.remove("hidden");
-    containerResultCompleted.classList.add("hidden");
-  }
+  containerResultEmpty.classList.toggle("hidden", state);
+  containerResultCompleted.classList.toggle("hidden", !state);
 }
 
 function formatNumber(num) {
@@ -52,15 +46,9 @@ function formatNumber(num) {
 btnSubmit.addEventListener("click", function (e) {
   e.preventDefault();
 
-  const amount = parseInt(inputMortgageAmount.value.replaceAll(",", ""));
-  const term = Number(inputMortgageTerm.value) * 12;
-  const interestRate = Number(inputInterestRate.value) / 100 / 12;
-
-  // const amount = Number(inputMortgageAmount.value.replace(/[.,]/g, ""));
-
-  let isAmountValid = checkAmount(),
-    isTermValid = checkTerm(),
-    isInterestRateValid = checkInterestRate(),
+  let isAmountValid = inputIsValid(inputMortgageAmount),
+    isTermValid = inputIsValid(inputMortgageTerm),
+    isInterestRateValid = inputIsValid(inputInterestRate),
     isCheckedMortgageType = checkMortgageType();
 
   let isFormValid =
@@ -69,16 +57,20 @@ btnSubmit.addEventListener("click", function (e) {
     isInterestRateValid &&
     isCheckedMortgageType;
 
-  const paymentMonthly =
-    (amount * (interestRate * (1 + interestRate) ** term)) /
-    ((1 + interestRate) ** term - 1);
-
-  const totalRepayment = paymentMonthly * term;
-
-  const monthlyPaymentInterestOnly = amount * interestRate;
-  const totalPaymentInterestOnly = monthlyPaymentInterestOnly * term + amount;
-
   if (isFormValid) {
+    const amount = parseInt(inputMortgageAmount.value.replaceAll(",", ""));
+    const term = Number(inputMortgageTerm.value) * 12;
+    const interestRate = Number(inputInterestRate.value) / 100 / 12;
+
+    const paymentMonthly =
+      (amount * (interestRate * (1 + interestRate) ** term)) /
+      ((1 + interestRate) ** term - 1);
+
+    const totalRepayment = paymentMonthly * term;
+
+    const monthlyPaymentInterestOnly = amount * interestRate;
+    const totalPaymentInterestOnly = monthlyPaymentInterestOnly * term + amount;
+
     if (inputRepayment.checked) {
       monthlyRepaymentsAmount.textContent = formatNumber(paymentMonthly);
       totalRepaymentsAmount.textContent = formatNumber(totalRepayment);
@@ -136,41 +128,17 @@ const showSuccess = (input) => {
   }
 };
 
-const checkAmount = () => {
+function inputIsValid(input) {
   let valid = false;
 
-  if (!isRequired(inputMortgageAmount.value)) {
-    showError(inputMortgageAmount, "This field is required");
+  if (!isRequired(input.value)) {
+    showError(input, "This field is required");
   } else {
-    showSuccess(inputMortgageAmount);
+    showSuccess(input);
     valid = true;
   }
   return valid;
-};
-
-const checkTerm = () => {
-  let valid = false;
-
-  if (!isRequired(inputMortgageTerm.value)) {
-    showError(inputMortgageTerm, "This field is required");
-  } else {
-    showSuccess(inputMortgageTerm);
-    valid = true;
-  }
-  return valid;
-};
-
-const checkInterestRate = () => {
-  let valid = false;
-
-  if (!isRequired(inputInterestRate.value)) {
-    showError(inputInterestRate, "This field is required");
-  } else {
-    showSuccess(inputInterestRate);
-    valid = true;
-  }
-  return valid;
-};
+}
 
 const checkMortgageType = () => {
   let valid = false;
